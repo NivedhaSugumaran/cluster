@@ -1,2 +1,0 @@
-# inspirecloudlatest
-welcome
