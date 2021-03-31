@@ -13,19 +13,7 @@
   <version>4.6</version>
   <packaging>pom</packaging>
 
-  <name>SonarSource PHP analyzer</name>
-  <url>http://redirect.sonarsource.com/plugins/php.html</url>
-  <inceptionYear>2010</inceptionYear>
-  <organization>
-    <name>SonarSource and Akram Ben Aissi</name>
-  </organization>
-  <licenses>
-    <license>
-      <name>GNU LGPL v3</name>
-      <url>http://www.gnu.org/licenses/lgpl.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
