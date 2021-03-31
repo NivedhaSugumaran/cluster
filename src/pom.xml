@@ -1,17 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <parent>
-    <groupId>org.sonarsource.parent</groupId>
-    <artifactId>parent</artifactId>
-    <version>55</version>
-  </parent>
+ <parent>
+  <groupId>org.phpmaven</groupId>
+  <artifactId>php-parent-pom</artifactId>
+  <version>2.0.2</version>
+ </parent>
 
-  <groupId>org.sonarsource.php</groupId>
-  <artifactId>php</artifactId>
-  <version>4.6</version>
-  <packaging>pom</packaging>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>org.phpsample</groupId>
+ <artifactId>Octavia_project</artifactId>
+ <packaging>php</packaging>
+ <version>1.0-SNAPSHOT</version>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.phpmaven</groupId>
+    <artifactId>maven-php-plugin</artifactId>
+    <extensions>true</extensions>
+   </plugin>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-site-plugin</artifactId>
+    <version>3.0</version>
+    <configuration>
+     <reportPlugins>
+      <plugin>
+       <groupId>org.phpmaven</groupId>
+       <artifactId>maven-php-plugin</artifactId>
+       <reportSets>
+        <reportSet>
+         <reports>
+          <report>phpdocumentor</report>
+          <report>phpunit-coverage</report>
+          <report>phpunit</report>  
+         </reports>
+        </reportSet>
+       </reportSets>
+      </plugin>
+     </reportPlugins>
+    </configuration>
+   </plugin>
+               <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>4.6.0</version>
+       </plugin>
+   
+  </plugins>
+ 
+
 
   
   <dependencies>
@@ -23,13 +64,6 @@
     </dependency>
     
   </dependencies>
-  <build>
-     <plugins>
-       <plugin>
-        <groupId>org.sonarsource.scanner.maven</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>4.6.0</version>
-       </plugin>
-    </plugins>
+   
   </build>
 </project>
